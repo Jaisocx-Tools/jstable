@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Table</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link id="jstableStylesheet" rel="stylesheet" href="/css/jstable.css">
+    <link id="jstableStylesheetLittle" rel="stylesheet" href="/css/jstable-little.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+  </head>
+  <body>
+    <main>
+      <div class="jstable" id="jstable-01"></div>
+    </main>
+    <script src="/js/JSTable.js"></script>
+    <script>
+      let jsTable = null;
+      const tableHeader = {
+        "id": {
+          "title": "id",
+          "type": "number",
+          "width": "50px",
+          "align": "right"
+        },
+        "image_src": {
+          "title": "Image",
+          "type": "image",
+          "width": "240px",
+          "align": "center"
+        },
+        "author": {
+          "title": "Author",
+          "type": "text",
+          "width": "110px",
+          "align": "left"
+        },
+        "title": {
+          "title": "Title",
+          "type": "text",
+          "width": "150px",
+          "align": "left"
+        },
+        "description": {
+          "title": "Description",
+          "type": "text",
+          "width": "1fr",
+          "align": "left"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "text",
+          "width": "160px",
+          "align": "left"
+        }
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        jsTable = new JSTable(
+          "jstable-01", 
+          "/data/table.json",
+          tableHeader
+        );
+        jsTable.loadJsonData();
+      });
+    </script>
+  </body>
+</html>
+
+
