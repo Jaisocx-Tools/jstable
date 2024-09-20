@@ -162,5 +162,7 @@ html, main, section, div, span, img {
 }
 
 @media all and (max-width: 820px) and (orientation: portrait) {
-  @import url('/css/jstable-little.css');
+  @import url('/jstable/www/css/jstable-little.css');
 }
+
+
