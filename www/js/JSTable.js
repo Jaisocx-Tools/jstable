@@ -26,11 +26,11 @@ class JSTable {
   }
 
   applyColumnsWidths(tableHeader) {
-    if (window.matchMedia(`(max-width: ${this.MAX_WIDTH_MOBILE_LOOK_AND_FEEL}px)`).matches) {
-      return;
-    }
+    let gridTemplateColumnsValue = '100%';
 
-    let gridTemplateColumnsValue = '';
+    if (!window.matchMedia(`(max-width: ${this.MAX_WIDTH_MOBILE_LOOK_AND_FEEL}px)`).matches) {
+      gridTemplateColumnsValue = this.generateGridTemplateColumnsStyle(tableHeader);
+    }
 
     let width = this.htmlElement.clientWidth;
     width = Math.min(document.body.clientWidth, width);
@@ -42,21 +42,19 @@ class JSTable {
     if (width > this.MAX_WIDTH_MOBILE_LOOK_AND_FEEL) {
       gridTemplateColumnsValue = this.generateGridTemplateColumnsStyle(tableHeader);
       mediaStylesheetLittle.disabled = true;
-
-      const tableHeadHtmlElement = document.querySelector(`#${this.htmlElementId} .jstable-row.header`);
-      tableHeadHtmlElement.style.gridTemplateColumns = gridTemplateColumnsValue;
-  
-      const tableRowsHtmlElementsCollection = document.querySelectorAll(`#${this.htmlElementId} .jstable-body .jstable-row`);
-      let rowHtmlElement = null;
-      for (let i=0; i < tableRowsHtmlElementsCollection.length; i++) {
-        rowHtmlElement = tableRowsHtmlElementsCollection.item(i);
-        rowHtmlElement.style.gridTemplateColumns = gridTemplateColumnsValue;
-      }
-
     } else {
       mediaStylesheetLittle.disabled = false;
     }
 
+    const tableHeadHtmlElement = document.querySelector(`#${this.htmlElementId} .jstable-row.header`);
+    tableHeadHtmlElement.style.gridTemplateColumns = gridTemplateColumnsValue;
+
+    const tableRowsHtmlElementsCollection = document.querySelectorAll(`#${this.htmlElementId} .jstable-body .jstable-row`);
+    let rowHtmlElement = null;
+    for (let i=0; i < tableRowsHtmlElementsCollection.length; i++) {
+      rowHtmlElement = tableRowsHtmlElementsCollection.item(i);
+      rowHtmlElement.style.gridTemplateColumns = gridTemplateColumnsValue;
+    }
   }
 
   generateGridTemplateColumnsStyle(tableHeader) {
