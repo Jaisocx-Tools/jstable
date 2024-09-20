@@ -149,6 +149,11 @@ html, main, section, div, span, img {
 }
 
 @media all and (min-width: 821px) {
+  .jstable {
+    width: var(--table-width);
+    max-width: 100vw;
+  }
+
   .jstable-body {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -157,7 +162,8 @@ html, main, section, div, span, img {
     min-height: var(--table-height);
     max-height: var(--table-height);
 
-    width: var(--table-width);
+    width: 100%;
+    max-width: 100%;
   }
 }
 
