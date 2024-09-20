@@ -1,5 +1,9 @@
+/**
+THEMING STYLES PROPERTIES:
+*/
 :root {
   --table-height: 500px;
+  --table-width: 960px;
 
   --font-size: 16px;
   --font-family: Lato;
@@ -31,7 +35,7 @@ html, main, section, div, span, img {
   display: grid;
   border: 1px solid var(--border-color);
   height: auto;
-  /*width: 560px;*/
+  width: var(--table-width);
   overflow-y: visible;
 }
 
@@ -151,7 +155,9 @@ html, main, section, div, span, img {
 
     height: var(--table-height);
     min-height: var(--table-height);
-    max-height: var(--table-height);  
+    max-height: var(--table-height);
+
+    width: var(--table-width);
   }
 }
 
