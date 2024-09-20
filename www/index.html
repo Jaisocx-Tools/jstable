@@ -4,15 +4,15 @@
     <title>JS Table</title>
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link id="jstableStylesheet" rel="stylesheet" href="css/jstable.css">
-    <link id="jstableStylesheetLittle" rel="stylesheet" href="css/jstable-little.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link id="jstableStylesheet" rel="stylesheet" href="/jstable/www/css/jstable.css">
+    <link id="jstableStylesheetLittle" rel="stylesheet" href="/jstable/www/css/jstable-little.css">
+    <link rel="stylesheet" href="/jstable/www/css/fonts.css">
   </head>
   <body>
     <main>
       <div class="jstable" id="jstable-01"></div>
     </main>
-    <script src="js/JSTable.js"></script>
+    <script src="/jstable/www/js/JSTable.js"></script>
     <script>
       let jsTable = null;
       const tableHeader = {
@@ -57,7 +57,7 @@
       document.addEventListener('DOMContentLoaded', () => {
         jsTable = new JSTable(
           "jstable-01", 
-          "data/table.json",
+          "/jstable/www/data/table.json",
           tableHeader
         );
         jsTable.loadJsonData();
