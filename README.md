@@ -13,6 +13,26 @@ this sample web project is a sample of css styling of a database table records d
 
 the html markup is produced by JSTable javascript class, used here in this project with javascript source code and no 3rd party dependencies.
 
+
+### sorting columns feature
+in this example, the click on column header sorts the table by column values.
+
+in a real application, in the most cases, the table data is loaded by pages.
+
+this sorting example is only arranging the subset of records 
+of the one loaded page.
+
+if Your table will use paginated loaded from server rows,
+then instead of this sorting there must be just normal reload of rows from RestAPI URL with sorting parameters specified, if available.
+
+```
+jstable
+  .setDataUrl('...?order-by=updated_at')
+  .load();
+```
+
+
+
 ## future improvements
 I apologize, here is still no pagination bar. this will appear here later, hope so)).
 
@@ -26,11 +46,10 @@ there is the url to json file, containing table rows data in json format.
 You can set Your own url of any published in web json data of some table records.
 
 ### how to set columns in the table
-in the file www/js/JSTable.js there is the javascript class JSTable,
+in the file www/data/table-metadata.json there is the JSON file, having settings for table columns,
 
-feel free to adjust number of columns and source json properties values as columns text.
+feel free to adjust number of columns and columns properties.
 
-Columns widths:
 ```
 index.html, line 18:
       const tableHeader = {
