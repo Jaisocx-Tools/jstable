@@ -1,0 +1,38 @@
+{
+  "id": {
+    "title": "id",
+    "type": "number",
+    "width": "50px",
+    "align": "right"
+  },
+  "image_src": {
+    "title": "Image",
+    "type": "image",
+    "width": "240px",
+    "align": "center"
+  },
+  "author": {
+    "title": "Author",
+    "type": "text",
+    "width": "110px",
+    "align": "left"
+  },
+  "title": {
+    "title": "Title",
+    "type": "text",
+    "width": "150px",
+    "align": "left"
+  },
+  "description": {
+    "title": "Description",
+    "type": "text",
+    "width": "1fr",
+    "align": "left"
+  },
+  "updated_at": {
+    "title": "Updated At",
+    "type": "text",
+    "width": "160px",
+    "align": "left"
+  }
+}

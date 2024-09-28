@@ -15,52 +15,15 @@
     <script src="/jstable/www/js/JSTable.js"></script>
     <script>
       let jsTable = null;
-      const tableHeader = {
-        "id": {
-          "title": "id",
-          "type": "number",
-          "width": "50px",
-          "align": "right"
-        },
-        "image_src": {
-          "title": "Image",
-          "type": "image",
-          "width": "240px",
-          "align": "center"
-        },
-        "author": {
-          "title": "Author",
-          "type": "text",
-          "width": "110px",
-          "align": "left"
-        },
-        "title": {
-          "title": "Title",
-          "type": "text",
-          "width": "150px",
-          "align": "left"
-        },
-        "description": {
-          "title": "Description",
-          "type": "text",
-          "width": "1fr",
-          "align": "left"
-        },
-        "updated_at": {
-          "title": "Updated At",
-          "type": "text",
-          "width": "160px",
-          "align": "left"
-        }
-      };
 
       document.addEventListener('DOMContentLoaded', () => {
-        jsTable = new JSTable(
-          "jstable-01", 
-          "/jstable/www/data/table.json",
-          tableHeader
-        );
-        jsTable.loadJsonData();
+        jstable = new JSTable();
+        jstable
+          .setElementId("jstable-01")
+          .setMetadataUrl("/jstable/www/data/table-metadata.json")
+          .setDataUrl("/jstable/www/data/table-records.json")
+          .setMobileLookAndFeelMaxWidth(830)
+          .load();
       });
     </script>
   </body>
